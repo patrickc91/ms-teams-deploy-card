@@ -112,7 +112,7 @@ export async function getWorkflowRunStatus() {
   if (stoppedStep) {
     lastStep = stoppedStep;
   } else {
-    lastStep = job?.steps.reverse().find((step) => step.status === "completed");
+    lastStep = job?.steps.reverse().find((step) => step.status === "completed" && step.conclusion !== 'skipped');
   }
 
   const startTime = moment(job?.started_at, moment.ISO_8601);
