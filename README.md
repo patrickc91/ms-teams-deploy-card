@@ -1,3 +1,23 @@
+# Fork
+This is a fork of https://github.com/toko-bifrost/ms-teams-deploy-card with the following changes:
+
+* Ignore skipped steps when evaluating the result of the workflow.
+* Write the name of the workflow in the Teams card.
+* Fix wrong input names in readme
+* Write the branch instead of the commit hash in the Teams card.
+* 
+
+## Workflow
+When modifying the js code in this repository, the following steps **need** to be executed:
+
+1. Clone project
+2. Run `nvm use` (install node version manager if not installed)
+3. Run `yarn install` (the project fails to compile when using npm install)
+4. Make your changes
+5. Run `yarn ncc` to compile the changes
+6. Commit the changed js files and everything in dist/
+
+
 # Microsoft Teams Deploy Card
 
 ![MS Teams Deploy Card](https://github.com/toko-bifrost/ms-teams-deploy-card/workflows/MS%20Teams%20Deploy%20Card/badge.svg)
