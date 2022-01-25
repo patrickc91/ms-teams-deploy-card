@@ -20,7 +20,7 @@ export function formatCozyLayout(
     .format("dddd, MMMM Do YYYY, h:mm:ss a z");
   const webhookBody = new WebhookBody();
   const repoUrl = `https://github.com/${process.env.GITHUB_REPOSITORY}`;
-  const shortSha = process.env.GITHUB_SHA?.substr(0, 7);
+  const branch = process.env.GITHUB_REF?.replace('refs/heads/', '');
 
   // Set status and elapsedSeconds
   let labels = `\`${conclusion.toUpperCase()}\``;
@@ -50,7 +50,7 @@ export function formatCozyLayout(
   // Set sections
   webhookBody.sections = [
     {
-      activityTitle: `**${process.env.GITHUB_WORKFLOW} #${process.env.GITHUB_RUN_NUMBER} (commit ${shortSha})** on [${process.env.GITHUB_REPOSITORY}](${repoUrl})`,
+      activityTitle: `**${process.env.GITHUB_WORKFLOW} #${process.env.GITHUB_RUN_NUMBER} (${branch})** on [${process.env.GITHUB_REPOSITORY}](${repoUrl})`,
       activityImage: author?.avatar_url || OCTOCAT_LOGO_URL,
       activitySubtitle: author
         ? `by [@${author.login}](${author.html_url}) on ${nowFmt}`
