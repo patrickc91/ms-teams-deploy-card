@@ -5,7 +5,14 @@ This is a fork of https://github.com/toko-bifrost/ms-teams-deploy-card with the 
 * Write the name of the workflow in the Teams card.
 * Fix wrong input names in readme
 * Write the branch instead of the commit hash in the Teams card.
-* 
+
+### Screenshots of the modified cards:
+
+#### Complete
+![](screenshots/layout-complete-modified.png)
+
+#### Compact
+![](screenshots/layout-cozy-modified.png)
 
 ## Workflow
 When modifying the js code in this repository, the following steps **need** to be executed:
